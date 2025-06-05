@@ -31,7 +31,7 @@ const Hero = () => {
                     <p className="text-center md: tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
                         Changer le monde en codant
                     </p>
-                    <a href="about">
+                    <a href="#projects">
                         <MagicButton
                             title="Voir mon travail"
                              icon={<FaLocationArrow />} 

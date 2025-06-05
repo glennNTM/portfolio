@@ -72,27 +72,27 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "Planètes du Système Solaire en 3D à Explorer",
-    des: "Explorez les merveilles de notre système solaire avec cette simulation 3D captivante des planètes utilisant Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    title: "Site de Ecole241",
+    des: "Plateforme web pour l'Ecole241, présentant ses programmes et facilitant l'inscription des étudiants.",
+    img: "/Ecole241.png", // Assurez-vous que cette image est dans votre dossier public
+    iconLists: ["/ts.svg", "/fm.svg", "/next.svg", "/tail.svg"], // fm.svg pour Framer Motion, next.svg pour Next.js, tail.svg pour Tailwind
+    link: "https://ecole241-web.vercel.app/",
   },
   {
     id: 2,
-    title: "Yoom - Application de Visioconférence",
-    des: "Simplifiez votre expérience de visioconférence avec Yoom. Connectez-vous facilement avec vos collègues et amis.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/zoom-clone",
+    title: "Tasky",
+    des: "Une application web pour gérer vos tâches, avec un système d'authentification.",
+    img: "/tasky.png", // Assurez-vous que cette image est dans votre dossier public
+    iconLists: ["/re.svg", "/tail.svg", "/javascript-svgrepo-com (1).svg", "/express.svg"], // re.svg pour React, tail.svg pour Tailwind, js pour JavaScript, express.svg pour Express
+    link: "#", // Pas encore de lien de déploiement
   },
   {
     id: 3,
-    title: "SaaS d'Image IA - Application type Canva",
-    des: "Une VRAIE application Software-as-a-Service avec des fonctionnalités IA et un système de paiements et de crédits utilisant la dernière stack technologique.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    title: "Plateforme de gestion des ordinateurs de Ecole241",
+    des: "Une application pour la gestion du parc informatique de l'Ecole241, permettant le suivi et la maintenance des équipements.",
+    img: "/gestionDesOrdinateurs.png", // Assurez-vous que cette image est dans votre dossier public
+    iconLists: ["/python-svgrepo-com.svg", "/django-svgrepo-com.svg", "/re.svg", "/tail.svg"], // Python, Django, React, Tailwind
+    link: "https://github.com/glennNTM/Backend-Gestion_des_Ordinateurs.git",
   },
   {
     id: 4,
