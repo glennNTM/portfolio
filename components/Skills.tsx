@@ -1,24 +1,26 @@
-import { HoverEffect } from "./ui/card-hover-effect";
+import { HoverEffect } from "./ui/card-hover-effect"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Projects from "./Projects";
 
 const Skills = () => {
   const techSkills = [
     {
-            description: <img src="/python-svgrepo-com.svg" alt="Python" className="w-10 h-10" />,
+      description: <img src="/python-svgrepo-com.svg" alt="Python" className="w-10 h-10" />,
 
     },
     {
-            description: <img src="/django-svgrepo-com.svg" alt="Django" className="w-10 h-10" />,
+      description: <img src="/django-svgrepo-com.svg" alt="Django" className="w-10 h-10" />,
 
     },
     {
-            description: <img src="/javascript-svgrepo-com (1).svg" alt="JavaScript" className="w-10 h-10" />,
+      description: <img src="/javascript-svgrepo-com (1).svg" alt="JavaScript" className="w-10 h-10" />,
 
     },
     {
-            description: <img src="/ts.svg" alt="TypeScript" className="w-10 h-10" />,
+      description: <img src="/ts.svg" alt="TypeScript" className="w-10 h-10" />,
     },
     {
-            description: <img src="/react-svgrepo-com.svg" alt="React" className="w-10 h-10" />,
+      description: <img src="/react-svgrepo-com.svg" alt="React" className="w-10 h-10" />,
     },
     {
       description: <img src="/next.svg" alt="Next.js" className="w-10 h-10" />,
@@ -26,31 +28,51 @@ const Skills = () => {
     {
       description: <img src="/tail.svg" alt="Tailwind CSS" className="w-10 h-10" />,
     },
+
     {
-            description: <img src="/dock.svg" alt="Docker" className="w-10 h-10" />,
+      description: <img src="/github.svg" alt="Docker" className="w-10 h-10" />,
     },
-    {
-            description: <img src="/github.svg" alt="Docker" className="w-10 h-10" />,
-    },
-    
-    {
-            description: <img src="/postgresql-svgrepo-com.svg" alt="PostgreSQL" className="w-10 h-10" />,
-    },
+
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-        Mes <span className="text-purple-500">Compétences</span>
-      </h1>
-      <p className="text-center text-white-200 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">
-        Je suis passionné par l'apprentissage continu et l'exploration de nouvelles technologies pour créer des solutions innovantes et performantes.
-      </p>
+    <>
+      <section id="skills" className="py-20">
+        <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+          Mes <span className="text-purple-500">Compétences</span>
+        </h1>
+        <p className="text-center text-white-200 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">
+          Je suis passionné par l'apprentissage continu et l'exploration de nouvelles technologies pour créer des solutions innovantes et performantes.
+        </p>
 
-      <div className="mt-12">
-        <HoverEffect items={techSkills} />
-      </div>
-    </section>
+        <div className="mt-12">
+          <HoverEffect items={techSkills} />
+        </div>
+      </section>
+      <Tabs defaultValue="account" className="w-[400px]">
+        <TabsList>
+          <TabsTrigger value="projects">Projets</TabsTrigger>
+          <TabsTrigger value="skills">Competentes</TabsTrigger>
+        </TabsList>
+        <TabsContent value="skills">
+          <section id="skills" className="py-20">
+            <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              Mes <span className="text-purple-500">Compétences</span>
+            </h1>
+            <p className="text-center text-white-200 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">
+              Je suis passionné par l'apprentissage continu et l'exploration de nouvelles technologies pour créer des solutions innovantes et performantes.
+            </p>
+
+            <div className="mt-12">
+              <HoverEffect items={techSkills} />
+            </div>
+          </section>
+        </TabsContent>
+        <TabsContent value="password">
+          <Projects />
+        </TabsContent>
+      </Tabs>
+    </>
   );
 };
 

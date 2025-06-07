@@ -13,7 +13,7 @@ const Projects = () => {
          Mes{" "}
         <span className="text-purple-500">projets récents</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-6 gap-y-2 mt-10">
         {projects.map((project) => (
           <CardContainer key={project.id} className="inter-var">
             <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">

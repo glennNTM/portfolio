@@ -27,10 +27,9 @@ const Hero = () => {
             <div className="flex justify-center relative my-20 z-10">
                 <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
                     {/* Texte déplacé ici */}
-                    <TextGenerateEffect className="text-center text-[40px] md:text-5xl lg:text-6xl" words={"Salut, je suis Glenn un Developpeur Backend"} />
-                    <p className="text-center md: tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-                        Changer le monde en codant
-                    </p>
+                    <TextGenerateEffect className="text-center text-[40px] md:text-5xl lg:text-6xl" words={"Bienvenue sur mon Portfolio"} />
+                    <TextGenerateEffect className="text-center text-purple-400 text-[20px] md:text-3xl lg:text-4xl" words={"Je suis Glenn, Développeur Backend"} />
+
                     <a href="#projects">
                         <MagicButton
                             title="Voir mon travail"

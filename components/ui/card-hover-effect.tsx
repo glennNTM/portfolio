@@ -19,7 +19,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-3 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5 gap-4 py-10", // Plus de colonnes pour des cartes plus petites, gap ajouté
+        "grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 py-10", // Plus de colonnes pour des cartes plus petites, gap ajouté
         className
       )}
     >

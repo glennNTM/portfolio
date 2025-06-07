@@ -6,6 +6,7 @@ type MagicButtonProps = {
     position?: 'left' | 'right'; // Position de l'icône
     handleClick?: () => void;
     otherClasses?: string;
+    type?: string
 }
 
 const MagicButton = ({
@@ -13,7 +14,8 @@ const MagicButton = ({
     icon,
     position,
     handleClick,
-    otherClasses
+    otherClasses,
+    type
 }: MagicButtonProps) => {
     return (
         <button

@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import { FloatingDock } from "@/components/ui/floating-dock";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FaUser, FaCode, FaGithub, FaPhone } from "react-icons/fa"; // Icônes mises à jour
 
 export default function Home() {
@@ -36,14 +37,25 @@ export default function Home() {
         <FloatingDock
           items={dockItems}
           desktopClassName="fixed top-1/2 left-6 -translate-y-1/2 z-[100]" // Positionné à gauche, centré verticalement
-          mobileClassName="fixed bottom-8 right-8 z-[100]" // Le mobile reste inchangé pour l'instant
+          mobileClassName="fixed bottom-8 right-8 z-[100]" // Le mobile reste inchangé
         />
         <Hero />
         <About />
-        <Skills />
-        <Projects />
+        <div className="w-full py-12"> {/* Ajout d'un conteneur avec padding */}
+          <Tabs defaultValue="projects" className="w-full">
+              <TabsList className="w-full max-w-3xl mx-auto grid grid-cols-2 mb-8 gap-x-4">
+              <TabsTrigger className="w-full bg-purple-500" value="projects">Projets</TabsTrigger>
+              <TabsTrigger className="w-full bg-purple-500" value="skills">Compétences</TabsTrigger>
+            </TabsList>
+            <TabsContent value="projects">
+              <Projects />
+            </TabsContent>
+            <TabsContent value="skills">
+              <Skills />
+            </TabsContent>
+          </Tabs>
+        </div>
         <Contact />
-        <Footer />
       </div>
     </main>
   )
