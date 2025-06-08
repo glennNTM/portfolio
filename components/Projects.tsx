@@ -1,5 +1,6 @@
 import { projects } from "@/data"; // Assurez-vous que le chemin est correct
 import React from "react";
+import { cn } from "@/lib/utils"; // Importer cn
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,67 +9,80 @@ import MagicButton from "./ui/MagicButton";
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20">
-      <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+    <section id="projects" className="py-20 relative overflow-hidden"> {/* Ajout de relative et overflow-hidden */}
+      {/* Nouveau fond avec grille et dégradé radial */}
+      <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center bg-white dark:bg-black">
+        <div
+          className={cn(
+            "absolute inset-0",
+            "[background-size:40px_40px]",
+            "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
+            "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+          )}
+        />
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+      </div>
+
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8"> {/* Conteneur pour le contenu au-dessus du fond */}
+        <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl"> {/* text-black dark:text-white hérité */}
          Mes{" "}
         <span className="text-purple-500">projets récents</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-6 gap-y-2 mt-10">
         {projects.map((project) => (
-          <CardContainer key={project.id} className="inter-var">
-            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
-              <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-neutral-600 dark:text-white"
-              >
+          <CardContainer key={project.id} className="inter-var mb-8"> {/* Ajout de mb-8 pour espacement vertical */}
+            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.2] dark:bg-zinc-900 dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"> {/* dark:bg-black changé en dark:bg-zinc-900 pour contraste avec fond principal */}
+              {/* Titre du projet */}
+              <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
                 {project.title}
               </CardItem>
-              <CardItem
-                as="p"
-                translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-              >
+              {/* Description du projet */}
+              <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
                 {project.des}
               </CardItem>
+              {/* Image du projet */}
               <CardItem translateZ="100" className="w-full mt-4">
                 <Image
                   src={project.img}
-                  height="1000"
-                  width="1000"
+                  height={1000} // Maintenir pour le ratio, mais la taille est contrôlée par CSS
+                  width={1000}  // Maintenir pour le ratio
                   className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                  alt={project.title}
+                  alt={`Image du projet ${project.title}`}
                 />
               </CardItem>
+              {/* Icônes des technologies et bouton d'action */}
               <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  className="flex items-center"
-                >
+                {/* Icônes des technologies */}
+                <CardItem translateZ={20} className="flex items-center">
                   {project.iconLists.map((icon, index) => (
                     <div
-                      key={index}
+                      key={icon + index} // Clé plus unique
                       className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
+                      style={{ transform: `translateX(-${5 * index + 2}px)` }}
                     >
                       <img src={icon} alt={`icon-${index}`} className="p-2" />
                     </div>
                   ))}
                 </CardItem>
+                {/* Bouton d'action */}
                 <CardItem
                   translateZ={20}
                   as={Link}
-                  href={project.link} // Lien vers GitHub ou le site déployé
+                  href={project.link || "#"} // Fallback au cas où le lien est manquant
                   target="_blank"
                   className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                 >
-                  <MagicButton title="Voir le site" icon={<FaLocationArrow />} position="right" />
+                  <MagicButton
+                    title={project.linkType === "github" ? "Voir le code" : "Voir le site"}
+                    icon={project.linkType === "github" ? <FaGithub /> : <FaLocationArrow />}
+                    position="right"
+                  />
                 </CardItem>
               </div>
             </CardBody>
           </CardContainer>
         ))}
+      </div>
       </div>
     </section>
   );

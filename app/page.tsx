@@ -32,7 +32,7 @@ export default function Home() {
     }
   ]
   return (
-    <main className="relative bg-black flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
+    <main className="relative bg-white dark:bg-black flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
       <div className="max-w-7xl w-full">
         <FloatingDock
           items={dockItems}
@@ -41,20 +41,8 @@ export default function Home() {
         />
         <Hero />
         <About />
-        <div className="w-full py-12"> {/* Ajout d'un conteneur avec padding */}
-          <Tabs defaultValue="projects" className="w-full">
-              <TabsList className="w-full max-w-3xl mx-auto grid grid-cols-2 mb-8 gap-x-4">
-              <TabsTrigger className="w-full bg-purple-500" value="projects">Projets</TabsTrigger>
-              <TabsTrigger className="w-full bg-purple-500" value="skills">Compétences</TabsTrigger>
-            </TabsList>
-            <TabsContent value="projects">
-              <Projects />
-            </TabsContent>
-            <TabsContent value="skills">
-              <Skills />
-            </TabsContent>
-          </Tabs>
-        </div>
+        <Skills />
+        <Projects />
         <Contact />
       </div>
     </main>

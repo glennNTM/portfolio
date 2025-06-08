@@ -6,11 +6,10 @@ import { FaLocationArrow } from "react-icons/fa"
 
 const Hero = () => {
     return (
-        <div className="pb-20 pt-36">
+        <div className="pb-30 pt-36">
             <div>
-                <Spotlight className="-top-40 -left-10 md:-left-32 md:top-20 h-screen" fill="white" />
-                <Spotlight className="top-10 -left-full h-[80vh] w-[50vw]" fill="purple" />
-                <Spotlight className="top-28 -left-80 h-[80vh] w-[50vw] " fill="blue" />
+                <Spotlight className="-top-40 -left-10 md:-left-32 md:top-20 h-screen" fill="purple" />
+
             </div>
             <div className="absolute top-0 left-0 flex h-screen w-full items-center justify-center bg-white dark:bg-black">
                 <div
@@ -28,7 +27,7 @@ const Hero = () => {
                 <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
                     {/* Texte déplacé ici */}
                     <TextGenerateEffect className="text-center text-[40px] md:text-5xl lg:text-6xl" words={"Bienvenue sur mon Portfolio"} />
-                    <TextGenerateEffect className="text-center text-purple-400 text-[20px] md:text-3xl lg:text-4xl" words={"Je suis Glenn, Développeur Backend"} />
+                    <TextGenerateEffect className="text-center text-[20px] md:text-3xl lg:text-4xl" words={"Je suis Glenn, Développeur Backend"} />
 
                     <a href="#projects">
                         <MagicButton

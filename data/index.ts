@@ -1,7 +1,6 @@
 export const navItems = [
   { name: "À propos", link: "#about" },
   { name: "Projets", link: "#projects" },
-  { name: "Témoignages", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -77,30 +76,34 @@ export const projects = [
     img: "/Ecole241.png", // Assurez-vous que cette image est dans votre dossier public
     iconLists: ["/ts.svg", "/fm.svg", "/next.svg", "/tail.svg"], // fm.svg pour Framer Motion, next.svg pour Next.js, tail.svg pour Tailwind
     link: "https://ecole241-web.vercel.app/",
+    linkType: "deploy",
   },
   {
     id: 2,
     title: "Tasky",
     des: "Une application web pour gérer vos tâches, avec un système d'authentification.",
     img: "/tasky.png", // Assurez-vous que cette image est dans votre dossier public
-    iconLists: ["/re.svg", "/tail.svg", "/javascript-svgrepo-com (1).svg", "/express.svg"], // re.svg pour React, tail.svg pour Tailwind, js pour JavaScript, express.svg pour Express
-    link: "#", // Pas encore de lien de déploiement
+    iconLists: ["mongodb-svgrepo-com.svg", "/re.svg", "/javascript-svgrepo-com (1).svg",], // re.svg pour React, tail.svg pour Tailwind, js pour JavaScript, express.svg pour Express
+    link: "https://github.com/glennNTM/Tasky", // Lien GitHub en attendant le déploiement
+    linkType: "github", // Marqué comme GitHub pour l'exemple, à changer si déployé
   },
   {
     id: 3,
     title: "Plateforme de gestion des ordinateurs de Ecole241",
-    des: "Une application pour la gestion du parc informatique de l'Ecole241, permettant le suivi et la maintenance des équipements.",
+    des: "Realisation d'une API REST, pour la gestion des ordinateurs de Ecole 241.",
     img: "/gestionDesOrdinateurs.png", // Assurez-vous que cette image est dans votre dossier public
     iconLists: ["/python-svgrepo-com.svg", "/django-svgrepo-com.svg", "/re.svg", "/tail.svg"], // Python, Django, React, Tailwind
     link: "https://github.com/glennNTM/Backend-Gestion_des_Ordinateurs.git",
+    linkType: "github",
   },
   {
     id: 4,
-    title: "Site Web Animé Apple iPhone 3D",
-    des: "Recréation du site web de l'Apple iPhone 15 Pro, combinant des animations GSAP et des effets 3D Three.js.",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://github.com/adrianhajdin/iphone",
+    title: "Promptopia",
+    des: "Plateforme pour partager et récupérer des prompts pertinents.",
+    img: "/promptopia.png", // Assurez-vous que cette image est dans votre dossier public
+    iconLists: ["/javascript-svgrepo-com (1).svg", "/mongodb-svgrepo-com.svg", "/next.svg", "/tail.svg"],
+    link: "https://github.com/glennNTM/promptopia.git",
+    linkType: "github",
   },
 ];
 

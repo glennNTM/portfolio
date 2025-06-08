@@ -1,15 +1,17 @@
 "use client";
 import React from 'react';
+import { cn } from "@/lib/utils"; // Importer cn
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
 import MagicButton from './ui/MagicButton';
+import { Spotlight } from './ui/Spotlight';
 
 const Contact = () => {
-  const myEmail = "votre.email@example.com"; // Remplacez par votre adresse e-mail
+  const myEmail = "glennntoutoume8@gmail.com"
   const cvPath = "/cv/mon_cv.pdf"; // Remplacez par le chemin vers votre CV dans le dossier public
-  const linkedInUrl = "https://www.linkedin.com/in/votrenom/"; // Remplacez par votre URL LinkedIn
-  const githubUrl = "https://github.com/votrenom/"; // Remplacez par votre URL GitHub
+  const linkedInUrl = "https://www.linkedin.com/in/glenn-ange-emmanuel-ntoutoume-0ba1a8192/"
+  const githubUrl = "https://github.com/glennNTM"
 
   const handleEmailCopy = () => {
     navigator.clipboard.writeText(myEmail)
@@ -37,13 +39,26 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-neutral-900">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+    <section id="contact" className="py-16 relative overflow-hidden"> {/* dark:bg-gray-950 retiré, relative et overflow-hidden ajoutés */}
+      {/* Nouveau fond avec grille et dégradé radial */}
+      <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center bg-white dark:bg-black">
+        <div
+          className={cn(
+            "absolute inset-0",
+            "[background-size:40px_40px]",
+            "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
+            "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+          )}
+        />
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+      </div>
+
+      <div className="max-w-3xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8"> {/* Conteneur pour le contenu au-dessus du fond */}
+        <h2 className="text-3xl font-bold text-center mb-12"> {/* text-gray-900 dark:text-white hérité */}
           Entrons en contact
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-2xl">
+        <form onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-zinc-900 p-8 rounded-xl shadow-2xl"> {/* dark:bg-zinc-800 changé en dark:bg-zinc-900 pour contraste */}
           <div>
             <Label htmlFor="name" className="text-gray-700 dark:text-gray-300">Nom complet</Label>
             <Input type="text" id="name" name="name" placeholder="Votre nom" required className="mt-1" />
@@ -60,21 +75,21 @@ const Contact = () => {
               rows={5}
               placeholder="Votre message ici..."
               required
-              className="mt-1 shadow-input dark:placeholder-text-neutral-600 flex w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-900 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600"
+              className="mt-1 shadow-input dark:placeholder-text-neutral-600 flex w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600" // dark:bg-zinc-900 changé en dark:bg-zinc-800 pour contraste
             />
             {/* Pour un effet de survol identique à Input.tsx, envisagez un composant Textarea.tsx dédié */}
           </div>
-          <div>
+          <div className="flex justify-center"> {/* Ajout pour centrer le bouton */}
             <MagicButton
               type="submit"
               title="Envoyer le message"
-              otherClasses="w-full !mt-4" // S'assure que le bouton prend toute la largeur et ajuste la marge
+              otherClasses="!mt-4" // w-full est retiré pour que le bouton prenne sa largeur naturelle/md:w-60 et soit centré
             />
           </div>
         </form>
 
         <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Ou retrouvez-moi sur :</h3>
+          <h3 className="text-xl font-semibold mb-6">Ou retrouvez-moi sur :</h3> {/* text-gray-900 dark:text-white hérité */}
           <div className="flex justify-center items-center space-x-6 mb-8">
             <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
               <FaLinkedin size={32} />

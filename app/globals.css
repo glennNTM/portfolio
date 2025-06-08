@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  font-family: var(--font-lato), sans-serif; /* Appliquer Lato comme police par défaut */
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
    --shadow-input:
