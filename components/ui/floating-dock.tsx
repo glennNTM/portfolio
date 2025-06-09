@@ -1,9 +1,10 @@
-"use client";
 /**
  * Note: Use position fixed according to your needs
  * Desktop navbar is better positioned at the bottom
  * Mobile navbar is better positioned at bottom right.
  **/
+
+"use client"
 
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
@@ -12,14 +13,11 @@ import {
   MotionValue,
   motion,
   useMotionValue,
-  useMotionValueEvent,
   useSpring,
-  useScroll,
   useTransform,
 } from "motion/react";
 
-import React, { useRef, useState } from "react";
-
+import { useRef, useState } from "react";
 
 export const FloatingDock = ({
   items,
@@ -100,108 +98,69 @@ const FloatingDockDesktop = ({
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
 }) => {
-  // La logique de visibilité au scroll est retirée pour revenir au comportement initial
-  // const { scrollYProgress } = useScroll();
-  // const [visible, setVisible] = useState(false);
-
-  // useMotionValueEvent(scrollYProgress, "change", (current) => {
-  //   if (typeof current === "number") {
-  //     let direction = current - (scrollYProgress.getPrevious() ?? 0);
-  //     if (scrollYProgress.get() < 0.05) { // Masquer en haut de la page
-  //       setVisible(false);
-  //     } else {
-  //       if (direction < 0 || scrollYProgress.get() <= 0) { // Afficher en scrollant vers le haut ou tout en haut
-  //         setVisible(true);
-  //       } else { // Masquer en scrollant vers le bas
-  //         setVisible(false);
-  //       }
-  //     }
-  //   }
-  // });
-
-  let mouseY = useMotionValue(Infinity); // On revient à mouseY pour l'interaction verticale
+  const mouseX = useMotionValue(Infinity);
   return (
-    // <AnimatePresence mode="wait"> // Retiré car la visibilité au scroll est enlevée
-      <motion.div
-        // initial={{ // Retiré
-        //   opacity: 1,
-        //   y: -100,
-        // }}
-        // animate={{ // Retiré
-        //   y: visible ? 0 : -100,
-        //   opacity: visible ? 1 : 0,
-        // }}
-        // transition={{ // Retiré
-        //   duration: 0.2,
-        // }}
-        onMouseMove={(e) => mouseY.set(e.pageY)} // On utilise e.pageY
-        onMouseLeave={() => mouseY.set(Infinity)}
-        className={cn(
-          // Styles pour un layout vertical à gauche
-          "hidden md:flex flex-col items-center gap-4 rounded-2xl bg-gray-50 px-3 py-4 dark:bg-neutral-900 shadow-lg border dark:border-white/[0.2]",
-          className // Permet de surcharger depuis page.tsx pour le positionnement
-        )}
-      >
-        {/* <motion.div // Div interne retirée, les styles sont sur la div principale
-          onMouseMove={(e) => mouseX.set(e.pageX)}
-          onMouseLeave={() => mouseX.set(Infinity)}
-          className={cn(
-            "flex flex-row items-center gap-2 sm:gap-3 rounded-full bg-gray-50 px-4 py-3 dark:bg-neutral-900 shadow-lg border dark:border-white/[0.2]"
-          )}
-        > */}
-          {items.map((item) => (
-            <IconContainer mouseY={mouseY} key={item.title} {...item} /> // On repasse mouseY
-          ))}
-        {/* </motion.div> */}
-      </motion.div>
-    // </AnimatePresence> // Retiré
+    <motion.div
+      onMouseMove={(e) => mouseX.set(e.pageX)}
+      onMouseLeave={() => mouseX.set(Infinity)}
+      className={cn(
+        "hidden w-16 md:flex md:flex-col items-center gap-4 rounded-2xl bg-gray-50 py-4 px-3 dark:bg-neutral-900", // Adjusted for vertical layout
+        className,
+      )}
+    >
+      {items.map((item) => (
+        <IconContainer mouseX={mouseX} key={item.title} {...item} />
+      ))}
+    </motion.div>
   );
 };
 
 function IconContainer({
   mouseX,
-  mouseY, // Ajout de mouseY à la déstructuration
   title,
   icon,
   href,
 }: {
-  mouseX?: MotionValue; // Gardé optionnel pour compatibilité si jamais utilisé ailleurs
-  mouseY: MotionValue;
+  mouseX: MotionValue;
   title: string;
   icon: React.ReactNode;
   href: string;
 }) {
-  let ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
-  // Utiliser mouseY pour calculer la distance verticale
-  let distance = useTransform(mouseY, (val) => { // On utilise mouseY
-    let bounds = ref.current?.getBoundingClientRect() ?? { y: 0, height: 0 }; // On utilise y et height
-    return val - bounds.y - bounds.height / 2; // On utilise y et height
+  const distance = useTransform(mouseX, (val) => {
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+
+    return val - bounds.x - bounds.width / 2;
   });
 
-  const effectRange = 80; // Portée de l'effet pour un layout vertical
-  let sizeTransform = useTransform(distance, [-effectRange, 0, effectRange], [40, 60, 40]);
-  let iconSizeTransform = useTransform(
+  const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+  const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+
+  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
+  const heightTransformIcon = useTransform(
     distance,
-    [-effectRange, 0, effectRange],
-    [20, 30, 20],
+    [-150, 0, 150],
+    [20, 40, 20],
   );
-  let width = useSpring(sizeTransform, {
+
+  const width = useSpring(widthTransform, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
-  let height = useSpring(sizeTransform, {
+  const height = useSpring(heightTransform, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
-  let widthIcon = useSpring(iconSizeTransform, {
+
+  const widthIcon = useSpring(widthTransformIcon, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
-  let heightIcon = useSpring(iconSizeTransform, {
+  const heightIcon = useSpring(heightTransformIcon, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
@@ -221,10 +180,10 @@ function IconContainer({
         <AnimatePresence>
           {hovered && (
             <motion.div
-              initial={{ opacity: 0, x: -10, y: "-50%" }} // Position initiale pour tooltip à droite
-              animate={{ opacity: 1, x: 0, y: "-50%" }}
-              exit={{ opacity: 0, x: -10, y: "-50%" }}
-              className="absolute left-full ml-3 top-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white z-50" // Positionné à droite
+              initial={{ opacity: 0, y: 10, x: "-50%" }}
+              animate={{ opacity: 1, y: 0, x: "-50%" }}
+              exit={{ opacity: 0, y: 2, x: "-50%" }}
+              className="absolute -top-8 left-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
             >
               {title}
             </motion.div>

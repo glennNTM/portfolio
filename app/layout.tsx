@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       {/* 3. Ajouter la variable de Lato aux classes du body */}
       <body className={`${geistSans.variable} ${geistMono.variable} ${lato.variable} antialiased text-black dark:text-white`}>
         <ThemeProvider

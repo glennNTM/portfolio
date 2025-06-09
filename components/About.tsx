@@ -50,13 +50,13 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-semibold text-purple-400 mb-3">Qui suis-je ?</h2>
               <p>
-                Je suis Glenn NTOUTOUME Ange-Emmanuel, étudiant en Développement Web à l'École 241. Passionné par l'informatique et les nouvelles technologies, je m'intéresse également de près au sport, aux jeux vidéos et aux échecs.
+                Je suis Glenn NTOUTOUME Ange-Emmanuel, étudiant en Développement Web à l&apos;École 241. Passionné par l&apos;informatique et les nouvelles technologies, je m&apos;intéresse également de près au sport, aux jeux vidéos et aux échecs.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-purple-400 mb-3">Mes objectifs</h2>
               <p>
-                Mon ambition principale est de maîtriser le développement backend et de développer des solutions robustes et performantes. Parallèlement, je souhaite continuer mon processus d'apprentissage continu en explorant d'autres domaines passionnants tels que le design et le machine learning. Collaborer avec des personnes talentueuses, voyager pour enrichir ma culture et mes connaissances, rencontrer de nouvelles personnes et saisir de nouvelles opportunités sont également essentiels à mon épanouissement professionnel et personnel, tout comme gagner en expérience sur des projets concrets.
+                Mon ambition principale est de maîtriser le développement backend et de développer des solutions robustes et performantes. Parallèlement, je souhaite continuer mon processus d&apos;apprentissage en explorant d&apos;autres domaines passionnants tels que le design et le machine learning. Collaborer avec des personnes talentueuses, voyager pour enrichir ma culture et mes connaissances et saisir de nouvelles opportunités sont également essentiels à mon épanouissement professionnel et personnel, tout comme gagner en expérience sur des projets concrets.
               </p>
             </div>
 
@@ -75,7 +75,7 @@ const About = () => {
                   title="Prendre contact"
                   icon={<FaPaperPlane />}
                   position="left"
-                  otherClasses="w-full sm:w-auto !bg-purple-600 hover:!bg-purple-700" // Style différent pour le deuxième bouton
+                  otherClasses="w-full sm:w-auto"
                 />
               </a>
             </div>

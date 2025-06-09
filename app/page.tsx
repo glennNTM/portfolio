@@ -1,11 +1,9 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import { FloatingDock } from "@/components/ui/floating-dock";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FaUser, FaCode, FaGithub, FaPhone } from "react-icons/fa"; // Icônes mises à jour
 
 export default function Home() {

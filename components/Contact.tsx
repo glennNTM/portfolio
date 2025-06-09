@@ -5,11 +5,11 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
 import MagicButton from './ui/MagicButton';
-import { Spotlight } from './ui/Spotlight';
+import { data } from 'motion/react-client';
 
 const Contact = () => {
   const myEmail = "glennntoutoume8@gmail.com"
-  const cvPath = "/cv/mon_cv.pdf"; // Remplacez par le chemin vers votre CV dans le dossier public
+  const cvPath = "/cv/CV de Glenn - Développeur Backend.pdf"
   const linkedInUrl = "https://www.linkedin.com/in/glenn-ange-emmanuel-ntoutoume-0ba1a8192/"
   const githubUrl = "https://github.com/glennNTM"
 
@@ -24,18 +24,27 @@ const Contact = () => {
       });
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-    };
-    // Ici, vous intégreriez la logique d'envoi (par exemple, via une API backend ou un service comme Formspree)
-    console.log("Données du formulaire:", data);
-    alert("Message envoyé (simulation) ! Pensez à configurer l'envoi réel.");
-    event.currentTarget.reset();
+  const handleSubmit = (event: React.FormEvent) => {
+    // Récupérer les valeurs des champs du formulaire
+    const fullname = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+    event.preventDefault()
+    fetch('/api/contact', {
+      method: 'POST',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fullname, email, message }), // Le body doit être ici
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+      .catch(err => {
+        console.error(err)
+      })
   };
 
   return (
@@ -102,7 +111,7 @@ const Contact = () => {
             </button>
           </div>
 
-          <a href={cvPath} download="CV_VotreNom.pdf" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors">
+          <a href={cvPath} download="CV de Glenn - Développeur Backend.pdf" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors">
             <FaDownload size={20} className="mr-2" />
             Télécharger mon CV
           </a>
