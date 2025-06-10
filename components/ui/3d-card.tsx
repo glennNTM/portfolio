@@ -7,8 +7,9 @@ import React, {
   useState,
   useContext,
   useRef,
+  useCallback,
   useEffect,
-} from "react";
+} from "react"
 
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
@@ -32,7 +33,7 @@ export const CardContainer = ({
       containerRef.current.getBoundingClientRect();
     const x = (e.clientX - left - width / 2) / 25;
     const y = (e.clientY - top - height / 2) / 25;
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
   };
 
   const handleMouseEnter = () => {
@@ -121,21 +122,18 @@ export const CardItem = ({
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
 
-  useEffect(() => {
-    handleAnimations();
-  }, [isMouseEntered]);
-
-  const handleAnimations = () => {
+  const handleAnimations = useCallback(() => {
     if (!ref.current) return;
     if (isMouseEntered) {
       ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
     } else {
       ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
     }
-  };
+  }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
+
   useEffect(() => {
     handleAnimations();
-  }, [isMouseEntered, handleAnimations]);
+  }, [isMouseEntered, handleAnimations]); // handleAnimations est maintenant stable grâce à useCallback
 
   return (
     <Tag

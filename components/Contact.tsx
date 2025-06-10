@@ -1,11 +1,10 @@
 "use client";
-import React from 'react';
-import { cn } from "@/lib/utils"; // Importer cn
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
-import MagicButton from './ui/MagicButton';
-import { data } from 'motion/react-client';
+import React from 'react'
+import { cn } from "@/lib/utils"
+import { Input } from "./ui/input"
+import { Label } from "./ui/label"
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa'
+import MagicButton from './ui/MagicButton'
 
 const Contact = () => {
   const myEmail = "glennntoutoume8@gmail.com"
@@ -16,11 +15,11 @@ const Contact = () => {
   const handleEmailCopy = () => {
     navigator.clipboard.writeText(myEmail)
       .then(() => {
-        alert("Adresse e-mail copiée dans le presse-papiers !");
+        alert("Adresse e-mail copiée dans le presse-papiers !")
       })
       .catch(err => {
-        console.error("Erreur lors de la copie de l'e-mail:", err);
-        alert("Impossible de copier l'adresse e-mail.");
+        console.error("Erreur lors de la copie de l'e-mail:", err)
+        alert("Impossible de copier l'adresse e-mail.")
       });
   };
 
@@ -36,7 +35,7 @@ const Contact = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ fullname, email, message }), // Le body doit être ici
+      body: JSON.stringify({ fullname, email, message }),
     })
       .then(res => res.json())
       .then(data => {
@@ -118,7 +117,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default Contact
