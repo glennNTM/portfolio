@@ -5,28 +5,28 @@ import { cn } from "@/lib/utils"
 const Skills = () => {
   const techSkills = [
     {
- description: <Image src="/python-svgrepo-com.svg" alt="Python" className="w-10 h-10" width={40} height={40} />,
+      description: <Image src="/python-svgrepo-com.svg" alt="Python" className="w-10 h-10" width={40} height={40} />,
 
     },
     {
- description: <Image src="/django-svgrepo-com.svg" alt="Django" className="w-10 h-10" width={40} height={40} />,
+      description: <Image src="/django-svgrepo-com.svg" alt="Django" className="w-10 h-10" width={40} height={40} />,
 
     },
     {
- description: <Image src="/javascript-svgrepo-com (1).svg" alt="JavaScript" className="w-10 h-10" width={40} height={40} />,
+      description: <Image src="/javascript-svgrepo-com (1).svg" alt="JavaScript" className="w-10 h-10" width={40} height={40} />,
 
     },
     {
- description: <Image src="/ts.svg" alt="TypeScript" className="w-10 h-10" width={40} height={40} />,
+      description: <Image src="/ts.svg" alt="TypeScript" className="w-10 h-10" width={40} height={40} />,
     },
     {
- description: <Image src="/react-svgrepo-com.svg" alt="React" className="w-10 h-10" width={40} height={40} />,
+      description: <Image src="/react-svgrepo-com.svg" alt="React" className="w-10 h-10" width={40} height={40} />,
     },
     {
- description: <Image src="/next.svg" alt="Next.js" className="w-10 h-10" width={40} height={40} />,
+      description: <Image src="/next.svg" alt="Next.js" className="w-10 h-10" width={40} height={40} />,
     },
     {
- description: <Image src="/tail.svg" alt="Tailwind CSS" className="w-10 h-10" width={40} height={40} />,
+      description: <Image src="/tail.svg" alt="Tailwind CSS" className="w-10 h-10" width={40} height={40} />,
     },
 
     {
@@ -56,9 +56,8 @@ const Skills = () => {
             Mes <span className="text-purple-500">Compétences</span>
           </h1>
           <p className="text-center text-gray-700 dark:text-gray-300 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">
-            +          Je suis passionné par l&apos;apprentissage continu et l&apos;exploration de nouvelles technologies pour créer des solutions innovantes et performantes.
+            Je suis passionné par l&apos;apprentissage continu et l&apos;exploration de nouvelles technologies pour créer des solutions innovantes et performantes.
           </p>
-
           <div className="mt-12">
             <HoverEffect items={techSkills} />
           </div>
