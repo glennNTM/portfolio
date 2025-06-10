@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lato } from "next/font/google"; // 1. Importer Lato
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/ui/ThemeProvider"; // Chemin corrigé pour votre ThemeProvider personnalisé
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +11,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// 2. Configurer Lato
+const lato = Lato({
+  variable: "--font-lato", // Crée une variable CSS --font-lato
+  weight: ["400", "700"],  // Choisissez les graisses (weights) dont vous avez besoin
+  subsets: ["latin"],       // Choisissez les sous-ensembles de caractères
 });
 
 export const metadata: Metadata = {
@@ -24,13 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="fr" suppressHydrationWarning>
+      {/* 3. Ajouter la variable de Lato aux classes du body */}
+      <body className={`${geistSans.variable} ${geistMono.variable} ${lato.variable} antialiased text-black dark:text-white`}>
         <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
