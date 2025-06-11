@@ -99,8 +99,10 @@ export async function POST(request: Request) {
         await transporter.sendMail(message);
         console.log("E-mail envoyé avec succès à:", recipientEmail);
         return NextResponse.json({ message: "Message envoyé avec succès" }, { status: 200 });
-    } catch (error: any) {
+    } catch (error) {
         console.error("Erreur Nodemailer lors de l'envoi de l'e-mail:", error);
-        return NextResponse.json({ error: `Erreur lors de l'envoi de l'e-mail: ${error.message}` }, { status: 500 });
+        // Vous pouvez vérifier le type de l'erreur si nécessaire avant d'accéder à error.message
+        const errorMessage = error instanceof Error ? error.message : "Une erreur inconnue s'est produite";
+        return NextResponse.json({ error: `Erreur lors de l'envoi de l'e-mail: ${errorMessage}` }, { status: 500 });
     }
 }
