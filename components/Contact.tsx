@@ -5,8 +5,15 @@ import { Input } from "./ui/input"
 import { Label } from "./ui/label"
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa'
 import MagicButton from './ui/MagicButton'
+import { useState } from 'react'
+
 
 const Contact = () => {
+  // State pour les champs du formulaire
+  const [fullname, setFullname] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+
   const myEmail = "glennntoutoume8@gmail.com"
   const cvPath = "/cv/CV de Glenn - Développeur Backend.pdf"
   const linkedInUrl = "https://www.linkedin.com/in/glenn-ange-emmanuel-ntoutoume-0ba1a8192/"
@@ -20,31 +27,43 @@ const Contact = () => {
       .catch(err => {
         console.error("Erreur lors de la copie de l'e-mail:", err)
         alert("Impossible de copier l'adresse e-mail.")
-      });
-  };
+      })
+  }
 
-  const handleSubmit = (event: React.FormEvent) => {
-    // Récupérer les valeurs des champs du formulaire
-    const fullname = (document.getElementById('name') as HTMLInputElement).value;
-    const email = (document.getElementById('email') as HTMLInputElement).value;
-    const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+
+
+  const onFormSubmitted = async (event: React.FormEvent) => {
     event.preventDefault()
-    fetch('/api/contact', {
-      method: 'POST',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ fullname, email, message }),
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  };
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        cache: 'no-cache',
+        body: JSON.stringify({
+          fullname,
+          email,
+          message
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log("Message envoyé avec succès:", data);
+        alert("Message envoyé avec succès !");
+        // Réinitialiser le formulaire
+        setFullname("");
+        setEmail("");
+        setMessage("");
+      } else {
+        console.error("Erreur lors de l'envoi du message:", data);
+        alert(`Erreur lors de l'envoi du message: ${data.error || data.message || "Veuillez réessayer."}`);
+      }
+    } catch (error) {
+      console.error("Erreur de connexion:", error);
+      alert("Une erreur s'est produite. Veuillez vérifier votre connexion et réessayer.");
+    }
+  }
 
   return (
     <section id="contact" className="py-16 relative overflow-hidden"> {/* dark:bg-gray-950 retiré, relative et overflow-hidden ajoutés */}
@@ -66,14 +85,32 @@ const Contact = () => {
           Entrons en contact
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-zinc-900 p-8 rounded-xl shadow-2xl"> {/* dark:bg-zinc-800 changé en dark:bg-zinc-900 pour contraste */}
+        <form onSubmit={onFormSubmitted} className="space-y-6 bg-white dark:bg-zinc-900 p-8 rounded-xl shadow-2xl"> {/* dark:bg-zinc-800 changé en dark:bg-zinc-900 pour contraste */}
           <div>
             <Label htmlFor="name" className="text-gray-700 dark:text-gray-300">Nom complet</Label>
-            <Input type="text" id="name" name="name" placeholder="Votre nom" required className="mt-1" />
+            <Input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Votre nom"
+              required
+              className="mt-1"
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
+            />
           </div>
           <div>
             <Label htmlFor="email" className="text-gray-700 dark:text-gray-300">Adresse e-mail</Label>
-            <Input type="email" id="email" name="email" placeholder="Votre e-mail" required className="mt-1" />
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre e-mail"
+              required
+              className="mt-1"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div>
             <Label htmlFor="message" className="text-gray-700 dark:text-gray-300">Message</Label>
@@ -81,6 +118,8 @@ const Contact = () => {
               id="message"
               name="message"
               rows={5}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="Votre message ici..."
               required
               className="mt-1 shadow-input dark:placeholder-text-neutral-600 flex w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600" // dark:bg-zinc-900 changé en dark:bg-zinc-800 pour contraste
