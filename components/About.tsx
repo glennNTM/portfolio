@@ -36,7 +36,7 @@ const About = () => {
           <div className="md:col-span-1 flex justify-center items-center">
             <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[350px] lg:h-[350px] relative shadow-2xl">
               <Image
-                src="/pp.avif" // Assurez-vous que l'image est dans /public/pp.avif
+                src="/pportfolio.png"
                 alt="Glenn Ntoutoume - Photo de profil"
                 layout="fill" // 'fill' pour remplir le conteneur parent
                 objectFit="cover" // 'cover' pour s'assurer que l'image couvre l'espace sans être déformée
@@ -58,26 +58,6 @@ const About = () => {
               <p>
                 Mon ambition principale est de maîtriser le développement backend et de développer des solutions robustes et performantes. Parallèlement, je souhaite continuer mon processus d&apos;apprentissage en explorant d&apos;autres domaines passionnants tels que le design et le machine learning. Collaborer avec des personnes talentueuses, voyager pour enrichir ma culture et mes connaissances et saisir de nouvelles opportunités sont également essentiels à mon épanouissement professionnel et personnel, tout comme gagner en expérience sur des projets concrets.
               </p>
-            </div>
-
-            {/* Call to Action Buttons */}
-            <div className="mt-12 flex flex-col sm:flex-row gap-6">
-              <a href="#projects"> {/* Lien vers la section projets */}
-                <MagicButton
-                  title="Voir mon travail"
-                  icon={<FaGithub />}
-                  position="left"
-                  otherClasses="w-full sm:w-auto"
-                />
-              </a>
-              <a href="#contact"> {/* Lien vers la section contact */}
-                <MagicButton
-                  title="Prendre contact"
-                  icon={<FaPaperPlane />}
-                  position="left"
-                  otherClasses="w-full sm:w-auto"
-                />
-              </a>
             </div>
           </div>
         </div>
