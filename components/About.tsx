@@ -2,8 +2,7 @@ import React from 'react';
 import { Spotlight } from './ui/Spotlight'; // Assurez-vous que le chemin est correct
 import { cn } from "@/lib/utils"; // Importer cn pour les classes conditionnelles
 import Image from 'next/image'; // Importer le composant Image de Next.js
-import MagicButton from './ui/MagicButton'; // Importer MagicButton
-import { FaGithub, FaPaperPlane } from 'react-icons/fa'; // Importer les icônes
+
 
 const About = () => {
   return (

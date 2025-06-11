@@ -3,18 +3,15 @@ import React from 'react';
 import { skills } from '@/data'; // Importer les compétences
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
   IconApi, // Icône pour les APIs
   IconFileCode, // Icône pour la documentation
   IconDatabase, // Icône pour les bases de données
   IconShieldLock, // Icône pour la sécurité
   IconBox, // Icône pour Docker/Containerisation
   IconTerminal2, // Fallback ou icône générique
-} from "@tabler/icons-react";
+} from "@tabler/icons-react"
 
 const Skills = () => {
-  // Mapper les icônes aux compétences si nécessaire, ou utiliser une logique pour les assigner
-  // Pour cet exemple, nous allons assigner des icônes basées sur l'index ou un ID.
   const getIconForSkill = (id: number) => {
     switch (id) {
       case 1:
@@ -30,7 +27,7 @@ const Skills = () => {
       default:
         return <IconTerminal2 className="h-8 w-8 text-purple-500" />;
     }
-  };
+  }
 
   return (
     <section id="skills" className="py-20 relative overflow-hidden bg-white dark:bg-black">
@@ -52,13 +49,12 @@ const Skills = () => {
           Mes <span className="text-purple-500">Compétences</span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10 py-10 max-w-7xl mx-auto">
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <SkillCard
               key={skill.id}
               title={skill.title}
               description={skill.description}
               icon={getIconForSkill(skill.id)}
-              index={index}
             />
           ))}
         </div>
@@ -71,12 +67,10 @@ const SkillCard = ({
   title,
   description,
   icon,
-  index, // index peut être utilisé pour des styles conditionnels si besoin
 }: {
   title: string;
   description: string;
   icon: React.ReactNode;
-  index: number;
 }) => {
   return (
     <div

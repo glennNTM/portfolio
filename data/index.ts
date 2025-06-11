@@ -1,3 +1,12 @@
+import {
+  IconApi, // Icône pour les APIs
+  IconFileCode, // Icône pour la documentation
+  IconDatabase, // Icône pour les bases de données
+  IconShieldLock, // Icône pour la sécurité
+  IconBox, // Icône pour Docker/Containerisation
+  IconTerminal2, // Fallback ou icône générique
+} from "@tabler/icons-react"
+
 export const navItems = [
   { name: "À propos", link: "#about", icon: "FaUser" }, // Icône pour la section "À propos"
   { name: "Compétences", link: "#skills", icon: "FaCode" }, // Icône pour la section "Compétences"
