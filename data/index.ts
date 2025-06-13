@@ -1,12 +1,3 @@
-import {
-  IconApi, // Icône pour les APIs
-  IconFileCode, // Icône pour la documentation
-  IconDatabase, // Icône pour les bases de données
-  IconShieldLock, // Icône pour la sécurité
-  IconBox, // Icône pour Docker/Containerisation
-  IconTerminal2, // Fallback ou icône générique
-} from "@tabler/icons-react"
-
 export const navItems = [
   { name: "À propos", link: "#about", icon: "FaUser" }, // Icône pour la section "À propos"
   { name: "Compétences", link: "#skills", icon: "FaCode" }, // Icône pour la section "Compétences"
@@ -86,5 +77,10 @@ export const skills = [
     id: 5,
     title: "Containerisation Docker",
     description: "Dockerisation d'applications pour un environnement de développement et de déploiement cohérent. Création de Dockerfiles optimisés et utilisation de services Docker avec Docker Compose.",
-  }
+  },
+  {
+    id: 6,
+    title: "Autres Hard-skills",
+    description: "Realisation d'application web fullstack avec NextJS, frontend simple pour consommer mes APIs avec Vite dev et maquette statique avec Figma",
+  },
 ]
