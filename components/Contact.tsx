@@ -15,7 +15,7 @@ const Contact = () => {
   const [message, setMessage] = useState("")
 
   const myEmail = "glennntoutoume8@gmail.com"
-  const cvPath = "/cv/CV de Glenn - Développeur Backend.pdf"
+  const cvPath = "/cv/CV-Portfolio.pdf"
   const linkedInUrl = "https://www.linkedin.com/in/glenn-ange-emmanuel-ntoutoume-0ba1a8192/"
   const githubUrl = "https://github.com/glennNTM"
 

@@ -1,12 +1,3 @@
-import {
-  IconApi, // Icône pour les APIs
-  IconFileCode, // Icône pour la documentation
-  IconDatabase, // Icône pour les bases de données
-  IconShieldLock, // Icône pour la sécurité
-  IconBox, // Icône pour Docker/Containerisation
-  IconTerminal2, // Fallback ou icône générique
-} from "@tabler/icons-react"
-
 export const navItems = [
   { name: "À propos", link: "#about", icon: "FaUser" }, // Icône pour la section "À propos"
   { name: "Compétences", link: "#skills", icon: "FaCode" }, // Icône pour la section "Compétences"
@@ -32,8 +23,8 @@ export const projects = [
     id: 2,
     title: "Tasky",
     des: "Une application web pour gérer vos tâches, avec un système d'authentification.",
-    img: "/tasky.png", // Assurez-vous que cette image est dans votre dossier public
-    keyFunction: ["Création, lecture, mise à jour, suppression (CRUD) de tâches", "Système d'authentification des utilisateurs avec JWT", "Authentification OAuth 2.0 via Google et GitHub", "Interface utilisateur responsive"],
+    img: "/Screenshot 2025-06-16 180513.png", // Assurez-vous que cette image est dans votre dossier public
+    keyFunction: ["Création, lecture, mise à jour, suppression (CRUD) de tâches", "Système d'authentification des utilisateurs avec JWT", "Interface utilisateur responsive"],
     iconLists: ["mongodb-svgrepo-com.svg","express-svgrepo-com.svg", "/re.svg", "/nodejs-svgrepo-com.svg",], // re.svg pour React, tail.svg pour Tailwind, js pour JavaScript, express.svg pour Express
     link: "https://github.com/glennNTM/Tasky", // Lien GitHub en attendant le déploiement
     linkType: "github", // Marqué comme GitHub pour l'exemple, à changer si déployé
@@ -86,5 +77,10 @@ export const skills = [
     id: 5,
     title: "Containerisation Docker",
     description: "Dockerisation d'applications pour un environnement de développement et de déploiement cohérent. Création de Dockerfiles optimisés et utilisation de services Docker avec Docker Compose.",
-  }
+  },
+  {
+    id: 6,
+    title: "Autres Hard-skills",
+    description: "Realisation d'application web fullstack avec NextJS, frontend simple pour consommer mes APIs avec Vite dev et maquette statique avec Figma",
+  },
 ]
