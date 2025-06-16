@@ -55,7 +55,7 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-semibold text-purple-400 mb-3">Mes objectifs</h2>
               <p>
-                Mon ambition principale est de maîtriser le développement backend et de développer des solutions robustes et performantes. Parallèlement, je souhaite continuer mon processus d&apos;apprentissage en explorant d&apos;autres domaines passionnants tels que le design et le machine learning. Collaborer avec des personnes talentueuses, voyager pour enrichir ma culture et mes connaissances et saisir de nouvelles opportunités sont également essentiels à mon épanouissement professionnel et personnel, tout comme gagner en expérience sur des projets concrets.
+                Mon ambition principale est de maîtriser le développement backend et de développer des solutions solides et performantes. Parallèlement, je souhaite continuer mon processus d&apos;apprentissage en explorant d&apos;autres domaines passionnants tels que le design et le machine learning. Collaborer avec des personnes talentueuses, voyager pour enrichir ma culture et mes connaissances et saisir de nouvelles opportunités sont également essentiels à mon épanouissement professionnel et personnel, tout comme gagner en expérience sur des projets concrets.
               </p>
             </div>
           </div>

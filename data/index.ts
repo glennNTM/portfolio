@@ -23,8 +23,8 @@ export const projects = [
     id: 2,
     title: "Tasky",
     des: "Une application web pour gérer vos tâches, avec un système d'authentification.",
-    img: "/tasky.png", // Assurez-vous que cette image est dans votre dossier public
-    keyFunction: ["Création, lecture, mise à jour, suppression (CRUD) de tâches", "Système d'authentification des utilisateurs avec JWT", "Authentification OAuth 2.0 via Google et GitHub", "Interface utilisateur responsive"],
+    img: "/Screenshot 2025-06-16 180513.png", // Assurez-vous que cette image est dans votre dossier public
+    keyFunction: ["Création, lecture, mise à jour, suppression (CRUD) de tâches", "Système d'authentification des utilisateurs avec JWT", "Interface utilisateur responsive"],
     iconLists: ["mongodb-svgrepo-com.svg","express-svgrepo-com.svg", "/re.svg", "/nodejs-svgrepo-com.svg",], // re.svg pour React, tail.svg pour Tailwind, js pour JavaScript, express.svg pour Express
     link: "https://github.com/glennNTM/Tasky", // Lien GitHub en attendant le déploiement
     linkType: "github", // Marqué comme GitHub pour l'exemple, à changer si déployé
