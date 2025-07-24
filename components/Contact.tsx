@@ -3,7 +3,7 @@ import React from 'react'
 import { cn } from "@/lib/utils"
 import { Input } from "./ui/input"
 import { Label } from "./ui/label"
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaPhone } from 'react-icons/fa'
 import MagicButton from './ui/MagicButton'
 import { useState } from 'react'
 
@@ -15,6 +15,7 @@ const Contact = () => {
   const [message, setMessage] = useState("")
 
   const myEmail = "glennntoutoume8@gmail.com"
+  const myPhone = "+241 077542084"
   const cvPath = "/cv/CV-Portfolio.pdf"
   const linkedInUrl = "https://www.linkedin.com/in/glenn-ange-emmanuel-ntoutoume-0ba1a8192/"
   const githubUrl = "https://github.com/glennNTM"
@@ -27,6 +28,17 @@ const Contact = () => {
       .catch(err => {
         console.error("Erreur lors de la copie de l'e-mail:", err)
         alert("Impossible de copier l'adresse e-mail.")
+      })
+  }
+
+  const handlePhoneCopy = () => {
+    navigator.clipboard.writeText(myPhone)
+      .then(() => {
+        alert("Numéro de téléphone copié dans le presse-papiers !")
+      })
+      .catch(err => {
+        console.error("Erreur lors de la copie du numéro de téléphone:", err)
+        alert("Impossible de copier le numéro de téléphone.")
       })
   }
 
@@ -146,6 +158,9 @@ const Contact = () => {
             </a>
             <button onClick={handleEmailCopy} aria-label="Copier l'adresse e-mail" className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition-colors flex items-center">
               <FaEnvelope size={32} />
+            </button>
+            <button onClick={handlePhoneCopy} aria-label="Copier le numéro de téléphone" className="text-green-500 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 transition-colors flex items-center">
+              <FaPhone size={32} />
             </button>
           </div>
 
