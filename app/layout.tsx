@@ -23,6 +23,11 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "Glenn NTOUTOUME Porfolio",
   description: "Portfolio Moderne & Minimaliste de Glenn NTOUTOUME",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' }
+    ],
+  },
 };
 
 export default function RootLayout({

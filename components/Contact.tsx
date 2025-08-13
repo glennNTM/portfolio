@@ -163,7 +163,6 @@ const Contact = () => {
               <FaPhone size={32} />
             </button>
           </div>
-
           <a href={cvPath} download="CV de Glenn - Développeur Backend.pdf" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors">
             <FaDownload size={20} className="mr-2" />
             Télécharger mon CV
