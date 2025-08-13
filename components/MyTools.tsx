@@ -20,6 +20,12 @@ const Tools = () => {
       description: <Image src="/ts.svg" alt="TypeScript" className="w-10 h-10" width={40} height={40} />,
     },
     {
+      description: <Image src="/express-svgrepo-com.svg" alt="TypeScript" className="w-10 h-10" width={40} height={40} />,
+    },
+    {
+      description: <Image src="/figma-svgrepo-com.svg" alt="TypeScript" className="w-10 h-10" width={40} height={40} />,
+    },
+    {
       description: <Image src="/react-svgrepo-com.svg" alt="React" className="w-10 h-10" width={40} height={40} />,
     },
     {
@@ -53,7 +59,7 @@ const Tools = () => {
 
         <div className="relative z-10 px-4 sm:px-6 lg:px-8"> {/* Conteneur pour le contenu au-dessus du fond */}
           <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl"> {/* text-black dark:text-white hérité */}
-            Mes <span className="text-purple-500">Outils & Technologies</span>
+            Ma <span className="text-purple-500">Stack de developement</span>
           </h1>
           <p className="text-center text-gray-700 dark:text-gray-300 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">
             Voici un aperçu des principaux outils et technologies que j&apos;utilise pour donner vie à mes projets, allant du backend au frontend.

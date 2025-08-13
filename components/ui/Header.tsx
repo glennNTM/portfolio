@@ -26,7 +26,7 @@ export const Header = () => {
         className="group inline-flex items-center focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 rounded-md"
       >
         <span className="font-mono text-lg sm:text-xl md:text-2xl font-semibold 
-                         bg-gradient-to-r from-violet-500 via-fuchsia-500 to-emerald-500 
+                         bg-gradient-to-r from-violet-500 via-fuchsia-500 to-white
                          bg-clip-text text-transparent tracking-tight whitespace-nowrap">
           &lt;GlennNTM /&gt;
         </span>
