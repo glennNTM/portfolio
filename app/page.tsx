@@ -5,7 +5,7 @@ import MyTools from "@/components/MyTools"
 import Projects from "@/components/Projects"
 import Skills from "@/components/Skills"
 import { FaUser, FaCode, FaGithub, FaPhone, FaTools } from "react-icons/fa"
-import { navItems } from "@/data" // Importez navItems
+import { navItems } from "@/data" 
 import { JSX } from "react"
 import { Header } from "@/components/ui/Header"
 
@@ -17,14 +17,7 @@ export default function Home() {
     FaGithub: <FaGithub className="h-6 w-6 text-neutral-500 dark:text-neutral-400" />,
     FaPhone: <FaPhone className="h-6 w-6 text-neutral-500 dark:text-neutral-400" />,
     FaTools: <FaTools className="h-6 w-6 text-neutral-500 dark:text-neutral-400" />, // Ajoutez FaTools
-  };
-
-  // Créer les items du dock en utilisant navItems et le mapping d'icônes
-  const dockItems = navItems.map(item => ({
-    title: item.name,
-    href: item.link,
-    icon: iconMap[item.icon] || <FaCode className="h-6 w-6 text-neutral-500 dark:text-neutral-400" />, // Fallback si l'icône n'est pas trouvée
-  }));
+  }
 
   return (
     <main className="relative bg-white dark:bg-black flex justify-center items-center flex-col mx-auto sm:px-10 px-5">
