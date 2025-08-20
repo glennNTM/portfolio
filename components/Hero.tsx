@@ -2,11 +2,11 @@ import { cn } from "@/lib/utils";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import MagicButton from "./ui/MagicButton";
-import { FaLocationArrow, FaEnvelope } from "react-icons/fa";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section className="relative pt-20 pb-14">
+    <section className="relative py-30">
       {/* Spotlight décoratif */}
       <Spotlight
         className="-top-40 -left-10 md:-left-32 md:top-20 h-screen"
@@ -41,9 +41,8 @@ const Hero = () => {
 
           {/* Description courte */}
           <p className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
-            Je conçois des solutions performantes et scalables pour répondre aux
-            besoins des entreprises et particuliers. Ouvert aux collaborations
-            et nouveaux projets.
+            Je conçois des solutions performantes et innovantes pour répondre aux
+            besoins des entreprises et particuliers.
           </p>
 
           {/* Boutons CTA */}

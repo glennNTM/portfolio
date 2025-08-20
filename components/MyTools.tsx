@@ -23,7 +23,7 @@ const Tools = () => {
       description: <Image src="/express-svgrepo-com.svg" alt="TypeScript" className="w-10 h-10" width={40} height={40} />,
     },
     {
-      description: <Image src="/figma-svgrepo-com.svg" alt="TypeScript" className="w-10 h-10" width={40} height={40} />,
+      description: <Image src="/postman-icon-svgrepo-com.svg" alt="Postman" className="w-10 h-10" width={40} height={40} />,
     },
     {
       description: <Image src="/react-svgrepo-com.svg" alt="React" className="w-10 h-10" width={40} height={40} />,

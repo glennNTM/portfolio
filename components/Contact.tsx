@@ -16,7 +16,7 @@ const Contact = () => {
 
   const myEmail = "glennntoutoume8@gmail.com"
   const myPhone = "+241 077542084"
-  const cvPath = "/cv/CV-Portfolio.pdf"
+  const cvPath = "/cv/CVdeGlenn-DéveloppeurBackend.pdf"
   const linkedInUrl = "https://www.linkedin.com/in/glenn-ange-emmanuel-ntoutoume-0ba1a8192/"
   const githubUrl = "https://github.com/glennNTM"
 

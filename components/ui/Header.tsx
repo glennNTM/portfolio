@@ -6,7 +6,7 @@ import { FaBars, FaTimes, FaDownload } from "react-icons/fa"
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const cvPath = "/cv/CV-Portfolio.pdf"
+  const cvPath = "/cv/CVdeGlenn-DéveloppeurBackend.pdf"
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
