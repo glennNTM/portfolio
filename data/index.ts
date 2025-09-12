@@ -12,7 +12,7 @@ export const projects = [
     id: 1,
     title: "Site de Ecole241 Communities",
     des: "Plateforme web LMS pour le programme communities d'Ecole241.",
-    imgList: ["/Macbook-Air-241-communities.vercel.app (1).png", "/Macbook-Air-241-communities.vercel.app.png"], // Slider prêt pour plusieurs images
+    imgList: ["/commumities.png"],
     keyFunction: [
       "Présentation des programmes et formations",
       "Formulaire d'inscription interactif",
@@ -27,14 +27,14 @@ export const projects = [
     id: 2,
     title: "Doctely",
     des: "Plateforme web de teleconsultation medicale.",
-    imgList: ["/Macbook-Air-localhost.png", "/doctelyscreenshot2.png"],
+    imgList: ["/doctely.png"],
     keyFunction: [
       "Teleconsultation medicale avec des medecins",
       "Ordonnaces numériques",
       "Gestion des patients et des médecins",
       "Securité des données médicales"
     ],
-    iconLists: ["/postgresql-logo-svgrepo-com.svg", "/express-svgrepo-com.svg", "/re.svg", "/nodejs-svgrepo-com.svg"], 
+    iconLists: ["/postgresql-logo-svgrepo-com.svg", "/express-svgrepo-com.svg", "/re.svg", "/nodejs-icon-svgrepo-com.svg"], 
     link: "https://doctely.netlify.app/",
     linkType: "deploy",
   },
@@ -49,7 +49,7 @@ export const projects = [
       "Interface utilisateur responsive",
       "Securité contre les attaques XSS et CSRF"
     ],
-    iconLists: ["mongodb-svgrepo-com.svg","express-svgrepo-com.svg", "/re.svg", "/nodejs-svgrepo-com.svg"],
+    iconLists: ["mongodb-svgrepo-com.svg","express-svgrepo-com.svg", "/re.svg", "/nodejs-icon-svgrepo-com.svg"],
     link: "https://github.com/glennNTM/Tasky",
     linkType: "github", 
   },
