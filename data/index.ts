@@ -57,17 +57,19 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Promptopia",
-    des: "Plateforme pour partager et récupérer des prompts pertinents.",
-    image: "/promptopia.png",
-    status: "En cours de développement",
+    title: "Macbook Landing Page",
+    des: "Landing Page pour la vente de MacBooks.",
+    image: "/macbook-landing-page.png",
+    status: "Déployé",
     keyFunction: [
-      "Partage et découverte de prompts pour IA",
-      "Recherche et filtrage de prompts par tag",
-      "Authentification OAuth 2.0 via Google"
+      "Design responsive et moderne",
+      "Informations sur les MacBooks",
+      "Animations avancées avec GSAP",
+      " Objet 3D avec Three.js"
     ],
-    technologies: ["/javascript-svgrepo-com (1).svg", "/mongodb-svgrepo-com.svg", "/next.svg", "/tail.svg"],
-    githubLink: "https://github.com/glennNTM/promptopia",
+    technologies: ["/Threejs-logo.svg","gsap-logo.svg", "/re.svg","/tail.svg"],
+    githubLink: "https://github.com/glennNTM/macbbook_gsap_app",
+    deployLink: "https://gsapmacbook.netlify.app/",
   },
 ];
 
