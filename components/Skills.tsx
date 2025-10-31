@@ -8,6 +8,7 @@ import {
   IconShieldLock,
   IconBox,
   IconTerminal2,
+  IconGitBranch,
 } from "@tabler/icons-react"
 
 export const skills = [
@@ -15,29 +16,22 @@ export const skills = [
     id: 1,
     title: "Développement d'APIs REST",
     points: [
-      "Express, NextJS et Django",
-      "Gestion des middlewares et controllers",
-      "Validation des données"
+  
+      "API REST avec Express, NextJS et Django",
+      "Documentation avec Swagger",
+      "Test avec Postman, Jest et Pytest",
     ],
   },
   {
     id: 2,
-    title: "Documentation d'API (Swagger)",
-    points: [
-      "Création de documentation interactive",
-      "Amélioration de l'intégration des APIs",
-      "Organisation claire et structurée"
-    ],
-  },
-  {
-    id: 3,
     title: "Gestion de Bases de Données",
     points: [
-      "MySQL, PostgreSQL, Supabase, MongoDB",
-      "Django ORM, Prisma, Mongoose",
-      "Modele conceptuel de données (MCD)"
+      "SQL (PostgreSQL, MySQL), NoSQL (MongoDB)",
+      "ORM (Django ORM, Prisma, Mongoose)",
+      "Modèle conceptuel de données (MCD)"
     ],
   },
+  
   {
     id: 4,
     title: "Authentification & Sécurité",
@@ -49,20 +43,29 @@ export const skills = [
   },
   {
     id: 5,
-    title: "Containerisation Docker",
+    title: "DevOps",
     points: [
+      "CI/CD avec GitHub Actions",
       "Dockerisation d'applications",
-      "Dockerfiles optimisés",
-      "Gestion des services avec Docker Compose"
+      "Kubernetes"
     ],
   },
   {
     id: 6,
-    title: "Autres Hard-skills",
+    title: "Frontend & Fullstack",
     points: [
       "Développement fullstack avec NextJS",
-      "Frontend simple avec Vite",
+      "Frontend React avec Vite",
       "Maquettes statiques avec Figma"
+    ],
+  },
+  {
+    id: 7,
+    title: "Bonnes Pratiques & outils",
+    points: [
+      "Utilisation de Git et GitHub",
+      "Methode Scrum",
+      "Code propre avec ESLint et Prettier"
     ],
   },
 ]
@@ -98,6 +101,7 @@ const Skills = () => {
         <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-12">
           Mes <span className="text-purple-500">Compétences</span>
         </h1>
+        <p className="text-center text-gray-700 dark:text-gray-300 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">Voici un aperçu de mes compétences en développement web. Je suis en constant apprentissage pour devenir un meilleur développeur.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10 py-10 max-w-7xl mx-auto">
           {skills.map((skill) => (
             <SkillCard

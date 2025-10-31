@@ -40,23 +40,9 @@ export const projects = [
     deployLink: "https://doctely.netlify.app/",
     githubLink: "https://github.com/glennNTM/doctely",
   },
+  
   {
     id: 3,
-    title: "Tasky",
-    des: "Application de gestion de tâches en ligne.",
-    image: "/Macbook-Air-localhost (1).png",
-    status: "En cours de développement",
-    keyFunction: [
-      "Création, lecture, mise à jour, suppression (CRUD) de tâches",
-      "Système d'authentification des utilisateurs avec JWT",
-      "Interface utilisateur responsive",
-      "Sécurité contre les attaques XSS et CSRF"
-    ],
-    technologies: ["/mongodb-svgrepo-com.svg", "/express-svgrepo-com.svg", "/re.svg", "/nodejs-svgrepo-com.svg"],
-    githubLink: "https://github.com/glennNTM/tasky",
-  },
-  {
-    id: 4,
     title: "Macbook Landing Page",
     des: "Landing Page pour la vente de MacBooks.",
     image: "/macbook-landing-page.png",

@@ -130,7 +130,7 @@ const Projects = () => {
                 </div>
 
                 {/* Boutons d'action */}
-                <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col sapce-between sm:flex-row gap-6">
                   {project.deployLink ? (
                     <>
                       <Link
