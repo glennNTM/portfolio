@@ -6,6 +6,7 @@ import { Label } from "./ui/label"
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaPhone } from 'react-icons/fa'
 import MagicButton from './ui/MagicButton'
 import { useState } from 'react'
+import Image from 'next/image'
 
 
 const Contact = () => {
@@ -20,25 +21,30 @@ const Contact = () => {
   const linkedInUrl = "https://www.linkedin.com/in/glenn-ange-emmanuel-ntoutoume-0ba1a8192/"
   const githubUrl = "https://github.com/glennNTM"
 
+  const [showConfetti, setShowConfetti] = useState(false)
+
+  const triggerConfetti = () => {
+    setShowConfetti(true)
+    setTimeout(() => setShowConfetti(false), 1500)
+  }
+
   const handleEmailCopy = () => {
     navigator.clipboard.writeText(myEmail)
       .then(() => {
-        alert("Adresse e-mail copiée dans le presse-papiers !")
+        triggerConfetti()
       })
       .catch(err => {
         console.error("Erreur lors de la copie de l'e-mail:", err)
-        alert("Impossible de copier l'adresse e-mail.")
       })
   }
 
   const handlePhoneCopy = () => {
     navigator.clipboard.writeText(myPhone)
       .then(() => {
-        alert("Numéro de téléphone copié dans le presse-papiers !")
+        triggerConfetti()
       })
       .catch(err => {
         console.error("Erreur lors de la copie du numéro de téléphone:", err)
-        alert("Impossible de copier le numéro de téléphone.")
       })
   }
 
@@ -93,6 +99,11 @@ const Contact = () => {
       </div>
 
       <div className="max-w-3xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8"> {/* Conteneur pour le contenu au-dessus du fond */}
+        {showConfetti && (
+          <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
+            <Image src="/confetti.gif" alt="confetti" width={400} height={300} className="opacity-90" />
+          </div>
+        )}
         <h2 className="text-3xl font-bold text-center mb-12"> {/* text-gray-900 dark:text-white hérité */}
           Entrons en contact
         </h2>

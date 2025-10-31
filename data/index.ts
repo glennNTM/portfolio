@@ -40,7 +40,7 @@ export const projects = [
     deployLink: "https://doctely.netlify.app/",
     githubLink: "https://github.com/glennNTM/doctely",
   },
-  
+
   {
     id: 3,
     title: "Macbook Landing Page",
@@ -53,7 +53,7 @@ export const projects = [
       "Animations avancées avec GSAP",
       " Objet 3D avec Three.js"
     ],
-    technologies: ["/Threejs-logo.svg","gsap-logo.svg", "/re.svg","/tail.svg"],
+    technologies: ["/Threejs-logo.svg", "gsap-logo.svg", "/re.svg", "/tail.svg"],
     githubLink: "https://github.com/glennNTM/macbbook_gsap_app",
     deployLink: "https://gsapmacbook.netlify.app/",
   },
@@ -61,4 +61,45 @@ export const projects = [
 
 
 
-
+export const gridItems = [
+  {
+    id: 1,
+    title: "Qui suis-je ?",
+    description: "Je suis Glenn NTOUTOUME, un développeur backend passionné par la création d'applications web. Je suis en constante apprentissage pour maitriser les nouvelles technologies et améliorer mes compétences.",
+    className: "",
+    imgClassName: "rounded-full mb-4",
+    titleClassName: "justify-center",
+    img: "/pportfolio.png",
+    spareImg: "",
+  },
+  {
+    id: 2,
+    title: "Ma Stack de développement",
+    description: "",
+    className: "",
+    imgClassName: "",
+    titleClassName: "justify-start",
+    img: "",
+    spareImg: "",
+  },
+  {
+    id: 3,
+    title: "Mes objectifs",
+    description: "Mon objectif principal est de maîtriser le développement back-end et de concevoir des solutions performantes, robustes et innovantes. En parallèle, je poursuis mon apprentissage du développement front-end afin de devenir développeur full-stack.",
+    className: " bg-black text-white border border-12 border-purple-500",
+    imgClassName: "",
+    titleClassName: "justify-center",
+    img: "",
+    spareImg: "",
+  },
+  {
+    id: 4,
+    title: "Tech enthusiast with a passion for development.",
+    description: "",
+    className: "",
+    imgClassName: "",
+    titleClassName: "justify-start",
+    img: "/grid.svg",
+    spareImg: "/b4.svg",
+  }
+];
