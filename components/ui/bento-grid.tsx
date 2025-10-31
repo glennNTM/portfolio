@@ -1,18 +1,10 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
+import Image from "next/image";
 import { gridItems } from "@/data";
 import { cn } from "@/lib/utils";
 import TechOrbit from "./TechOrbit";
-
-function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false);
-  if (typeof window === "undefined") return matches;
-  const media = window.matchMedia(query);
-  if (media.matches !== matches) setMatches(media.matches);
-  media.addEventListener("change", (e) => setMatches(e.matches));
-  return matches;
-}
 
 type CardProps = {
   id: number;
@@ -51,9 +43,11 @@ function BentoCard({
             isPortfolioImg ? "mb-4" : "absolute inset-0"
           )}
         >
-          <img
+          <Image
             src={img}
             alt={typeof title === "string" ? title : `bento-${id}`}
+            width={isPortfolioImg ? 350 : 800}
+            height={isPortfolioImg ? 350 : 600}
             className={cn(
               isPortfolioImg
                 ? "w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[350px] lg:h-[350px] rounded-full object-cover shadow-2xl"
@@ -64,9 +58,11 @@ function BentoCard({
         </div>
       )}
       {!img && spareImg && (
-        <img
+        <Image
           src={spareImg}
           alt="decoration"
+          width={160}
+          height={160}
           className="absolute -right-6 -bottom-6 w-40 h-40 opacity-20 object-contain"
         />
       )}
@@ -77,22 +73,25 @@ function BentoCard({
         >
           {title}
         </div>
-        {description && (
-          <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-            {description}
-          </p>
-        )}
+        {description &&
+          (typeof description === "string" ? (
+            <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
+              {description}
+            </p>
+          ) : (
+            <div className="text-sm md:text-base text-neutral-300 leading-relaxed">
+              {description}
+            </div>
+          ))}
       </div>
     </div>
   );
 }
 
 export default function BentoGrid({ className }: { className?: string }) {
-  const isMobile = useMediaQuery("(max-width: 1023px)");
-
   const [leftItems, rightItems] = useMemo(() => {
-    const left: typeof gridItems = [] as any;
-    const right: typeof gridItems = [] as any;
+    const left: typeof gridItems = [];
+    const right: typeof gridItems = [];
     gridItems.forEach((item, idx) => {
       (idx % 2 === 0 ? left : right).push(item);
     });

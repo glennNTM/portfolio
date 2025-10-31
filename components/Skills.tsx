@@ -8,7 +8,6 @@ import {
   IconShieldLock,
   IconBox,
   IconTerminal2,
-  IconGitBranch,
 } from "@tabler/icons-react"
 
 export const skills = [
@@ -99,7 +98,7 @@ const Skills = () => {
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-12">
-          Mes <span className="text-purple-500">Compétences</span>
+          Mes <span className="font-bold text-purple-500">Compétences</span>
         </h1>
         <p className="text-center text-gray-700 dark:text-gray-300 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">Voici un aperçu de mes compétences en développement web. Je suis en constant apprentissage pour devenir un meilleur développeur.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10 py-10 max-w-7xl mx-auto">

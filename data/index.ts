@@ -36,7 +36,7 @@ export const projects = [
       "Gestion des patients et des médecins",
       "Sécurité des données médicales"
     ],
-    technologies: ["/postgresql-logo-svgrepo-com.svg", "/express-svgrepo-com.svg", "/re.svg", "/nodejs-svgrepo-com.svg"],
+    technologies: ["/postgresql-logo-svgrepo-com.svg", "/express-svgrepo-com.svg", "/re.svg", "/nodejs-icon-svgrepo-com.svg"],
     deployLink: "https://doctely.netlify.app/",
     githubLink: "https://github.com/glennNTM/doctely",
   },
