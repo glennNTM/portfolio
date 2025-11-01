@@ -38,7 +38,7 @@ const Projects = () => {
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-          Mes <span className="text-purple-500 font-bold">realisations</span>
+          Mes <span className="text-purple-500 font-bold">projets</span>
         </h1>
         <p className="text-center text-gray-700 dark:text-gray-300 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">
           Voici une sélection de mes projets récents.

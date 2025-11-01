@@ -6,7 +6,7 @@ import { FaBars, FaTimes, FaDownload } from "react-icons/fa"
 
 export const  Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const cvPath = "/cv/CVdeGlenn-DéveloppeurBackend.pdf"
+  const cvPath = "/cv/CV-GLENN.pdf"
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
@@ -82,7 +82,7 @@ export const  Header = () => {
           ))}
           <a
             href={cvPath}
-            download="CV de Glenn - Développeur Backend.pdf"
+            download="CV-GLENN.pdf"
             className="flex items-center gap-2 px-6 py-2 text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors"
             onClick={() => setMenuOpen(false)}
           >

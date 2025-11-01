@@ -5,6 +5,7 @@ import Image from "next/image";
 import { gridItems } from "@/data";
 import { cn } from "@/lib/utils";
 import TechOrbit from "./TechOrbit";
+import { GlobeDemo } from "./GridGlobe";
 
 type CardProps = {
   id: number;
@@ -32,7 +33,7 @@ function BentoCard({
   return (
     <div
       className={cn(
-        "bento-card relative overflow-hidden rounded-2xl p-6 shadow-lg bg-[#0B0B0F] text-center transition-transform hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl border border-white/10",
+        "bento-card relative overflow-hidden rounded-3xl p-6 shadow-lg bg-[#0B0B0F] text-center transition-transform hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl border border-white/10",
         className
       )}
     >
@@ -67,23 +68,36 @@ function BentoCard({
         />
       )}
 
-      <div className="relative z-10 flex flex-col items-center gap-3">
-        <div
-          className={cn("font-bold text-lg md:text-xl flex", titleClassName)}
-        >
-          {title}
+      {id === 4 ? (
+        <>
+          <div
+            className={cn("font-bold text-lg md:text-xl flex", titleClassName)}
+          >
+            {title}
+          </div>
+          <div className="relative z-10 w-full h-full flex items-center justify-center">
+            <GlobeDemo />
+          </div>
+        </>
+      ) : (
+        <div className="relative z-10 flex flex-col items-center gap-3">
+          <div
+            className={cn("font-bold text-lg md:text-xl flex", titleClassName)}
+          >
+            {title}
+          </div>
+          {description &&
+            (typeof description === "string" ? (
+              <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
+                {description}
+              </p>
+            ) : (
+              <div className="text-sm md:text-base text-neutral-300 leading-relaxed">
+                {description}
+              </div>
+            ))}
         </div>
-        {description &&
-          (typeof description === "string" ? (
-            <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-              {description}
-            </p>
-          ) : (
-            <div className="text-sm md:text-base text-neutral-300 leading-relaxed">
-              {description}
-            </div>
-          ))}
-      </div>
+      )}
     </div>
   );
 }

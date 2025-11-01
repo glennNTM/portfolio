@@ -37,7 +37,7 @@ const Hero = () => {
           />
           {/* Description courte */}
           <p className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
-            Bonjour, je suis Glenn NTOUTOUME Developpeur Backend.
+            Bonjour, je suis Glenn NTOUTOUME Développeur Backend.
           </p>
 
           {/* Boutons CTA */}

@@ -1,6 +1,6 @@
 "use client";
-import React from 'react'
-import { cn } from "@/lib/utils"
+import React from "react";
+import { cn } from "@/lib/utils";
 import {
   IconApi,
   IconFileCode,
@@ -8,14 +8,13 @@ import {
   IconShieldLock,
   IconBox,
   IconTerminal2,
-} from "@tabler/icons-react"
+} from "@tabler/icons-react";
 
 export const skills = [
   {
     id: 1,
     title: "Développement d'APIs REST",
     points: [
-  
       "API REST avec Express, NextJS et Django",
       "Documentation avec Swagger",
       "Test avec Postman, Jest et Pytest",
@@ -27,17 +26,17 @@ export const skills = [
     points: [
       "SQL (PostgreSQL, MySQL), NoSQL (MongoDB)",
       "ORM (Django ORM, Prisma, Mongoose)",
-      "Modèle conceptuel de données (MCD)"
+      "Modèle conceptuel de données (MCD)",
     ],
   },
-  
+
   {
     id: 4,
     title: "Authentification & Sécurité",
     points: [
       "JWT, OAuth2",
       "Rate limiting, bot detection et CORS",
-      "Securité contre les attaques XSS et CSRF"
+      "Securité contre les attaques XSS et CSRF",
     ],
   },
   {
@@ -46,7 +45,7 @@ export const skills = [
     points: [
       "CI/CD avec GitHub Actions",
       "Dockerisation d'applications",
-      "Kubernetes"
+      "Kubernetes",
     ],
   },
   {
@@ -55,7 +54,7 @@ export const skills = [
     points: [
       "Développement fullstack avec NextJS",
       "Frontend React avec Vite",
-      "Maquettes statiques avec Figma"
+      "Maquettes statiques avec Figma",
     ],
   },
   {
@@ -64,25 +63,34 @@ export const skills = [
     points: [
       "Utilisation de Git et GitHub",
       "Methode Scrum",
-      "Code propre avec ESLint et Prettier"
+      "Code propre avec ESLint et Prettier",
     ],
   },
-]
+];
 
 const Skills = () => {
   const getIconForSkill = (id: number) => {
     switch (id) {
-      case 1: return <IconApi className="h-8 w-8 text-purple-500" />;
-      case 2: return <IconFileCode className="h-8 w-8 text-purple-500" />;
-      case 3: return <IconDatabase className="h-8 w-8 text-purple-500" />;
-      case 4: return <IconShieldLock className="h-8 w-8 text-purple-500" />;
-      case 5: return <IconBox className="h-8 w-8 text-purple-500" />;
-      default: return <IconTerminal2 className="h-8 w-8 text-purple-500" />;
+      case 1:
+        return <IconApi className="h-8 w-8 text-purple-500" />;
+      case 2:
+        return <IconFileCode className="h-8 w-8 text-purple-500" />;
+      case 3:
+        return <IconDatabase className="h-8 w-8 text-purple-500" />;
+      case 4:
+        return <IconShieldLock className="h-8 w-8 text-purple-500" />;
+      case 5:
+        return <IconBox className="h-8 w-8 text-purple-500" />;
+      default:
+        return <IconTerminal2 className="h-8 w-8 text-purple-500" />;
     }
-  }
+  };
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden bg-white dark:bg-black">
+    <section
+      id="skills"
+      className="py-20 relative overflow-hidden bg-white dark:bg-black"
+    >
       {/* Fond avec grille */}
       <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center">
         <div
@@ -90,7 +98,7 @@ const Skills = () => {
             "absolute inset-0",
             "[background-size:40px_40px]",
             "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-            "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+            "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
           )}
         />
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
@@ -100,7 +108,10 @@ const Skills = () => {
         <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-12">
           Mes <span className="font-bold text-purple-500">Compétences</span>
         </h1>
-        <p className="text-center text-gray-700 dark:text-gray-300 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">Voici un aperçu de mes compétences en développement web. Je suis en constant apprentissage pour devenir un meilleur développeur.</p>
+        <p className="text-center text-gray-700 dark:text-gray-300 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">
+          Voici un aperçu de mes compétences actuelles en développement web. Je
+          suis en constant apprentissage pour devenir un meilleur développeur.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10 py-10 max-w-7xl mx-auto">
           {skills.map((skill) => (
             <SkillCard
