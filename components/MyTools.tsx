@@ -59,7 +59,7 @@ const Tools = () => {
 
         <div className="relative z-10 px-4 sm:px-6 lg:px-8"> {/* Conteneur pour le contenu au-dessus du fond */}
           <h1 className="heading text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl"> {/* text-black dark:text-white hérité */}
-            Ma <span className="text-purple-500">Stack de developement</span>
+            Mes <span className="font-bold text-purple-500">outils de développement</span>
           </h1>
           <p className="text-center text-gray-700 dark:text-gray-300 md:tracking-wider my-4 text-sm md:text-lg lg:text-xl">
             Voici un aperçu des principaux outils et technologies que j&apos;utilise pour donner vie à mes projets, allant du backend au frontend.

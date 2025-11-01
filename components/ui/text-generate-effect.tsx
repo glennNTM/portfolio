@@ -8,11 +8,13 @@ export const TextGenerateEffect = ({
   className,
   filter = true,
   duration = 0.5,
+  highlightWords,
 }: {
   words: string;
   className?: string;
   filter?: boolean;
   duration?: number;
+  highlightWords?: string[];
 }) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
@@ -34,10 +36,20 @@ export const TextGenerateEffect = ({
     return (
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
+          const sanitizedWord = word
+            .replace(/[.,!?;:()«»"'`]/g, "")
+            .toLowerCase();
+          const isHighlighted = !!highlightWords?.some(
+            (w) => w.toLowerCase() === sanitizedWord
+          );
           return (
             <motion.span
               key={word + idx}
-              className="text-black dark:text-white opacity-0"
+              className={`${
+                isHighlighted
+                  ? "text-violet-500"
+                  : "text-black dark:text-white"
+              } opacity-0`}
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}

@@ -6,7 +6,7 @@ import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section className="relative py-30">
+    <section className="relative py-30 min-h-[85vh] md:min-h-[70vh] lg:min-h-[60vh]">
       {/* Spotlight décoratif */}
       <Spotlight
         className="-top-40 -left-10 md:-left-32 md:top-20 h-screen"
@@ -27,22 +27,17 @@ const Hero = () => {
       </div>
 
       {/* Contenu principal */}
-      <div className="relative z-10 flex justify-center">
+      <div className="relative z-10 flex justify-center items-center min-h-[inherit]">
         <div className="max-w-[90vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center text-center space-y-3">
           {/* Nom et titre */}
           <TextGenerateEffect
             className="text-[32px] md:text-5xl lg:text-6xl font-bold"
-            words="Développeur Backend"
+            words="Transformer les concepts en solutions fiables et innovantes."
+            highlightWords={["fiables", "innovantes"]}
           />
-          <TextGenerateEffect
-            className="text-[18px] md:text-3xl lg:text-4xl font-medium"
-            words="Glenn NTOUTOUME"
-          />
-
           {/* Description courte */}
           <p className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
-            Je conçois des solutions performantes et innovantes pour répondre aux
-            besoins des entreprises et particuliers.
+            Bonjour, je suis Glenn NTOUTOUME Développeur Backend.
           </p>
 
           {/* Boutons CTA */}
@@ -54,12 +49,11 @@ const Hero = () => {
                 position="right"
               />
             </a>
-           
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

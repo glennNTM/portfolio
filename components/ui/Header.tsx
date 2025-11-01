@@ -4,9 +4,9 @@ import Link from "next/link"
 import { useState } from "react"
 import { FaBars, FaTimes, FaDownload } from "react-icons/fa"
 
-export const Header = () => {
+export const  Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const cvPath = "/cv/CVdeGlenn-DéveloppeurBackend.pdf"
+  const cvPath = "/cv/CV-GLENN.pdf"
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
@@ -69,7 +69,7 @@ export const Header = () => {
 
       {/* Menu mobile */}
       {menuOpen && (
-        <div className="absolute top-14 right-4 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-lg shadow-lg rounded-lg p-4 space-y-3 z-50 w-48 sm:w-56 md:hidden">
+        <div className="absolute top-14 right-4 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-lg shadow-lg rounded-lg p-8 space-y-3 z-50 w-64 sm:w-64 md:hidden">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -82,8 +82,8 @@ export const Header = () => {
           ))}
           <a
             href={cvPath}
-            download="CV de Glenn - Développeur Backend.pdf"
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors"
+            download="CV-GLENN.pdf"
+            className="flex items-center gap-2 px-6 py-2 text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
             <FaDownload size={14} />
