@@ -33,7 +33,7 @@ function BentoCard({
   return (
     <div
       className={cn(
-        "bento-card relative overflow-hidden rounded-3xl p-6 shadow-lg bg-[#0B0B0F] text-center transition-transform hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl border border-white/10",
+        "bento-card relative overflow-hidden rounded-3xl p-6 shadow-lg bg-neutral-100 dark:bg-[#0B0B0F] text-center transition-transform hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl border border-neutral-300 dark:border-white/10",
         className
       )}
     >
@@ -70,11 +70,7 @@ function BentoCard({
 
       {id === 4 ? (
         <>
-          <div
-            className={cn("font-bold text-lg md:text-xl flex", titleClassName)}
-          >
-            {title}
-          </div>
+          <div className={cn("font-bold flex", titleClassName)}>{title}</div>
           <div className="relative z-10 w-full h-full flex items-center justify-center">
             <GlobeDemo />
           </div>
@@ -88,11 +84,11 @@ function BentoCard({
           </div>
           {description &&
             (typeof description === "string" ? (
-              <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
+              <p className="text-sm md:text-base text-neutral-900 dark:text-neutral-300 leading-relaxed">
                 {description}
               </p>
             ) : (
-              <div className="text-sm md:text-base text-neutral-300 leading-relaxed">
+              <div className="text-sm md:text-base text-neutral-900 dark:text-neutral-300 leading-relaxed">
                 {description}
               </div>
             ))}

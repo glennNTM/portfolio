@@ -23,7 +23,7 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Glenn NTOUTOUME Porfolio",
-  description: "Portfolio Moderne & Minimaliste de Glenn NTOUTOUME",
+  description: "Portfolio de Glenn NTOUTOUME",
 };
 
 export default function RootLayout({
@@ -33,7 +33,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      {/* 3. Ajouter la variable de Lato aux classes du body */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lato.variable} antialiased text-black dark:text-white`}
       >

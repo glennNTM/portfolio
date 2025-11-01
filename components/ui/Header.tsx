@@ -69,7 +69,7 @@ export const  Header = () => {
 
       {/* Menu mobile */}
       {menuOpen && (
-        <div className="absolute top-14 right-4 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-lg shadow-lg rounded-lg p-8 space-y-3 z-50 w-64 sm:w-64 md:hidden">
+        <div className="absolute top-14 right-4 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-lg shadow-lg rounded-lg p-8 space-y-3 z-50 w-72 sm:w-72 md:hidden">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -83,7 +83,7 @@ export const  Header = () => {
           <a
             href={cvPath}
             download="CV-GLENN.pdf"
-            className="flex items-center gap-2 px-6 py-2 text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors"
+            className="flex items-center gap-3 px-6 py-2 text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
             <FaDownload size={14} />
