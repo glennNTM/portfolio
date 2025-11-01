@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import MagicButton from "./ui/MagicButton";
 import { useState } from "react";
-import Image from "next/image";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   // State pour les champs du formulaire
@@ -27,21 +27,15 @@ const Contact = () => {
     "https://www.linkedin.com/in/glenn-ange-emmanuel-ntoutoume-0ba1a8192/";
   const githubUrl = "https://github.com/glennNTM";
 
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  const triggerConfetti = () => {
-    setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 1500);
-  };
-
   const handleEmailCopy = () => {
     navigator.clipboard
       .writeText(myEmail)
       .then(() => {
-        triggerConfetti();
+        toast.success("Email copié dans le presse-papiers !");
       })
       .catch((err) => {
         console.error("Erreur lors de la copie de l'e-mail:", err);
+        toast.error("Erreur lors de la copie de l'email");
       });
   };
 
@@ -49,10 +43,11 @@ const Contact = () => {
     navigator.clipboard
       .writeText(myPhone)
       .then(() => {
-        triggerConfetti();
+        toast.success("Numéro de téléphone copié dans le presse-papiers !");
       })
       .catch((err) => {
         console.error("Erreur lors de la copie du numéro de téléphone:", err);
+        toast.error("Erreur lors de la copie du numéro de téléphone");
       });
   };
 
@@ -74,14 +69,14 @@ const Contact = () => {
       const data = await response.json();
       if (response.ok) {
         console.log("Message envoyé avec succès:", data);
-        alert("Message envoyé avec succès !");
+        toast.success("Message envoyé avec succès !");
         // Réinitialiser le formulaire
         setFullname("");
         setEmail("");
         setMessage("");
       } else {
         console.error("Erreur lors de l'envoi du message:", data);
-        alert(
+        toast.error(
           `Erreur lors de l'envoi du message: ${
             data.error || data.message || "Veuillez réessayer."
           }`
@@ -89,7 +84,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error("Erreur de connexion:", error);
-      alert(
+      toast.error(
         "Une erreur s'est produite. Veuillez vérifier votre connexion et réessayer."
       );
     }
@@ -114,17 +109,6 @@ const Contact = () => {
       <div className="max-w-3xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         {" "}
         {/* Conteneur pour le contenu au-dessus du fond */}
-        {showConfetti && (
-          <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
-            <Image
-              src="/confetti.gif"
-              alt="confetti"
-              width={400}
-              height={300}
-              className="opacity-90"
-            />
-          </div>
-        )}
         <h2 className="text-3xl font-bold text-center mb-12">
           {" "}
           {/* text-gray-900 dark:text-white hérité */}

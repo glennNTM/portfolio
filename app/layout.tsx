@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lato } from "next/font/google"; // 1. Importer Lato
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider"; // Chemin corrigé pour votre ThemeProvider personnalisé
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster position="bottom-left" />
           </ThemeProvider>
       </body>
     </html>
