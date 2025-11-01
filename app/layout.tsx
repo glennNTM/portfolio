@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 // 2. Configurer Lato
 const lato = Lato({
   variable: "--font-lato", // Crée une variable CSS --font-lato
-  weight: ["400", "700"],  // Choisissez les graisses (weights) dont vous avez besoin
-  subsets: ["latin"],       // Choisissez les sous-ensembles de caractères
+  weight: ["400", "700"], // Choisissez les graisses (weights) dont vous avez besoin
+  subsets: ["latin"], // Choisissez les sous-ensembles de caractères
 });
 
 export const metadata: Metadata = {
@@ -34,16 +34,18 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       {/* 3. Ajouter la variable de Lato aux classes du body */}
-      <body className={`${geistSans.variable} ${geistMono.variable} ${lato.variable} antialiased text-black dark:text-white`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${lato.variable} antialiased text-black dark:text-white`}
+      >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster position="bottom-left" />
-          </ThemeProvider>
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster position="bottom-left" />
+        </ThemeProvider>
       </body>
     </html>
   );
